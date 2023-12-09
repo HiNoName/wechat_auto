@@ -16,7 +16,7 @@ setup(
     name='wechat_auto_ls',  # 包名称
     version='1.0',  # 版本
     author='shuai_li',  # 作者
-    author_email='l1216710774@qq.com',  # 作者邮箱
+    author_email='1216710774@qq.com',  # 作者邮箱
     description='微信自动发送消息脚本',  # 描述
     long_description=readme(),  # 长文描述
     long_description_content_type='text/markdown',  # 长文描述的文本格式
