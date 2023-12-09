@@ -21,6 +21,7 @@ setup(
     long_description=readme(),  # 长文描述
     long_description_content_type='text/markdown',  # 长文描述的文本格式
     keywords='wechat',  # 关键词
+    packages=find_packages(),
     url='https://github.com/HiNoName/wechat_auto',
     classifiers=[  # 包的分类信息，见https://pypi.org/pypi?%3Aaction=list_classifiers
         'Development Status :: 5 - Production/Stable',
@@ -32,8 +33,10 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
     ],
-    python_requires='>=3.6',
-
+    python_requires='>=3.8',
+    install_requires=['pywin32>=302', 'uiautomation>=2.0.18'],
     license='Apache License 2.0',  # 许可证
+    scripts=['main/ls.py']
 )
+
 
