@@ -20,20 +20,20 @@ def get_parser():
     parser.add_argument('--r', action='store_true', default=False, help='是否使用上次的记录')
     parser.add_argument('--sr', action='store_true', default=False, help='查看上次的记录')
     parser.add_argument('--time', type=str, default='12:00:00', help='发送时间，格式为: 12:00:00')
-    parser.add_argument('--delay', type=float, default=-0.3, help='提前 or 延迟 多少秒发送，满了就减去，快了就加上')
+    parser.add_argument('--delay', type=float, default=0, help='提前 or 延迟 多少秒发送，满了就减去，快了就加上')
     parser.add_argument('--who', type=str, default='文件传输助手', help='发送给谁，例如 张三')
     parser.add_argument('--msg', type=str, default='今天天气真好', help='消息内容，例如 今天天气真好')
     return parser.parse_args()
 
 
 def save_file(args):
-    with open("./params.json", mode="w") as f:
+    with open("D://params.json", mode="w") as f:
         json.dump(args.__dict__, f, indent=4)
 
 
 def read_file():
-    assert os.path.exists("./params.json"), '历史记录不存在'
-    return json.load(open("./params.json", mode="r"))
+    assert os.path.exists("D://params.json"), '历史记录不存在'
+    return json.load(open("D://params.json", mode="r"))
 
 
 class WeChat:
@@ -112,7 +112,7 @@ class WeChat:
         aim_time = aim_time - delta if self.args.delay < 0 else aim_time + delta
 
         if aim_time <= cur_time:
-            print('已超时')
+            print('已超时，设定时间为', aim_time)
             return False
         return True
 
