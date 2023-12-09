@@ -6,7 +6,7 @@
 > optional arguments:  
   -h, --help     show this help message and exit  
   --r            是否使用上次的记录  
-  --show_r       查看上次的记录  
+  --sr       查看上次的记录  
   --time TIME    发送时间，格式为: 12:00:00  
   --delay DELAY  提前 or 延迟 多少秒发送，满了就减去，快了就加上  
   --who WHO      发送给谁，例如 张三  
